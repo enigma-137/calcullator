@@ -20,6 +20,7 @@
 
  
 let percentage = Math.floor(Math.random() * 101);
+console.log(percentage);
 
 let btn = document.getElementById('btn');
 let loadForm = document.getElementById('load-form');
@@ -45,9 +46,11 @@ loadForm.addEventListener('submit', function (e) {
 
       bname = document.getElementById("bname").value;
       gname = document.getElementById("gname").value;
-     
       
-      highMsg.innerHTML = `Dear ${bname} and ${gname},<br/> You have ${percentage}% chance of getting in, Lmao you should shoot your shot already 😂❤ `;
+      
+      highMsg.innerHTML = `Dear  <span id="name1">${bname}</span> and 
+      <span id="name2">${gname}</span>,<br/> You have ${percentage}% chance of getting in,
+       Lmao you should shoot your shot already 😂❤ `;
     }
     else if(percentage  > 40 && percentage <= 80) {
       lowMsg.style.display = 'block';
@@ -60,8 +63,15 @@ loadForm.addEventListener('submit', function (e) {
       bname = document.getElementById("bname").value;
       gname = document.getElementById("gname").value;
 
-      lowMsg.innerHTML = `Dear ${bname} and ${gname},<br/>You have ${percentage}% chance of getting in, Lmao you should try your luck👀👀`;
-     
+      lowMsg.innerHTML = `Well <span id="name1">${bname}</span><br/>You have ${percentage}% chance of getting in, Lmao you should try your luck👀👀  <span id="name2">
+      ${gname}</span> might fall,`;
+      
+      // let name1 = document.getElementById('name1');
+      // let name2 = document.getElementById('name2');
+
+      // name1.style.color = 'black';
+      // name2.style.color = 'black';
+
    
     }
     else {
@@ -75,13 +85,18 @@ loadForm.addEventListener('submit', function (e) {
       gname = document.getElementById("gname").value;
      
 
-      lowMsg.innerHTML = `Dear ${bname} and ${gname},<br/>You have ${percentage}% chance of getting in. Just forget Comrade, she's not your kind`;
+      lowMsg.innerHTML = `Omoo <span id="name1">${bname}</span> ,<br/>You have ${percentage}% chance of getting in. Just forget Comrade,<span id="name2"> ${gname}</span> is not your kind`;
     }  
   }
 
   setTimeout(calculateResults, 5000);
+  let name1 = document.getElementById('name1');
+  let name2 = document.getElementById('name2');
 
-  
+  name1.style.color = 'black';
+  name2.style.color = 'black';
+
+  window.reloa
 });
 // bname = firtName();
 // gname = secondName();
